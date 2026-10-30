@@ -1,0 +1,706 @@
+/* =========================================================
+   CAMPUS LOST & FOUND MANAGER
+   GTK 4 - Balanced Three Column Dashboard
+   Main Theme: Royal Blue
+   ========================================================= */
+
+* {
+  font-family: "Inter", "Cantarell", "Segoe UI", system-ui, sans-serif;
+}
+
+window {
+  background-color: #eef2f9;
+  color: #0f172a;
+  font-size: 12.5pt;
+}
+
+.app-root {
+  padding: 1.5rem;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.side-panel {
+  background-color: #ffffff;
+  border: 0.08rem solid #dce4f2;
+  border-radius: 1.4rem;
+  padding: 1.4rem 1.15rem;
+  min-width: 19.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(15, 29, 64, 0.04);
+}
+
+.logo-mark {
+  background-color: #2457f5;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  border-radius: 0.85rem;
+  padding: 0.45em 0.75em;
+  box-shadow: 0 0.2rem 0.6rem rgba(36, 87, 245, 0.25);
+}
+
+.logo-text {
+  color: #0f1d40;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav-section {
+  color: #8c98b4;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.9rem;
+}
+
+/* Navigation buttons */
+
+.nav-item {
+  background-color: transparent;
+  background-image: none;
+  border: 0.08rem solid transparent;
+  border-left: 0.3rem solid transparent;
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.95rem;
+  min-height: 2.2rem;
+  box-shadow: none;
+  transition: background-color 150ms ease;
+}
+
+.nav-item:hover {
+  background-color: #f0f4ff;
+  background-image: none;
+}
+
+.nav-item.nav-active {
+  background-color: #e8effe;
+  background-image: none;
+  border-left-color: #2457f5;
+  border-top-color: #e8effe;
+  border-right-color: #e8effe;
+  border-bottom-color: #e8effe;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  min-width: 1.6rem;
+}
+
+.nav-name {
+  color: #475569;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.nav-active .nav-name {
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+.nav-count {
+  background-color: #eef2fb;
+  color: #475569;
+  border-radius: 99rem;
+  padding: 0.18em 0.7em;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.nav-active .nav-count {
+  background-color: #2457f5;
+  color: #ffffff;
+}
+
+/* Sidebar promotional card */
+
+.promo-card {
+  background-color: #142d65;
+  border-radius: 1.2rem;
+  padding: 1.3rem;
+  box-shadow: 0 0.4rem 1.1rem rgba(14, 31, 77, 0.16);
+}
+
+.promo-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.promo-text {
+  color: #c3d1f3;
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar-card {
+  background-color: #ffffff;
+  border: 0.08rem solid #dce4f2;
+  border-radius: 1.15rem;
+  padding: 0.55rem 1.1rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(15, 29, 64, 0.03);
+}
+
+.user-avatar {
+  background-color: #dfe8ff;
+  color: #1d4ed8;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border-radius: 99rem;
+  padding: 0.65em 0.8em;
+}
+
+.user-name {
+  color: #0f1d40;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.user-mail {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.page-title {
+  color: #0f1d40;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  color: #64748b;
+  font-size: 1.02rem;
+}
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.stat-card {
+  background-color: #ffffff;
+  border: 0.08rem solid #dce4f2;
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(15, 29, 64, 0.03);
+}
+
+.stat-title {
+  color: #475569;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.stat-arrow {
+  color: #0f1d40;
+  border: 0.08rem solid #d5ddf0;
+  border-radius: 99rem;
+  padding: 0.2em 0.6em;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.stat-number {
+  color: #0f1d40;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.stat-note {
+  border-radius: 0.55rem;
+  padding: 0.25em 0.7em;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stat-lost .stat-note {
+  background-color: #fdeaea;
+  color: #c63a37;
+}
+
+.stat-found .stat-note {
+  background-color: #dff4fb;
+  color: #0b7fa3;
+}
+
+.stat-claimed .stat-note {
+  background-color: #ddf5ee;
+  color: #0f7f63;
+}
+
+.stat-main {
+  background-color: #2457f5;
+  border-color: #2457f5;
+  box-shadow: 0 0.4rem 1.2rem rgba(36, 87, 245, 0.2);
+}
+
+.stat-main .stat-title,
+.stat-main .stat-number {
+  color: #ffffff;
+}
+
+.stat-main .stat-arrow {
+  color: #ffffff;
+  border-color: #829cf7;
+}
+
+.stat-main .stat-note {
+  background-color: #426ff3;
+  color: #ffffff;
+}
+
+/* =========================================================
+   PANELS AND ANALYTICS
+   ========================================================= */
+
+.panel-card {
+  background-color: #ffffff;
+  border: 0.08rem solid #dce4f2;
+  border-radius: 1.35rem;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 0.25rem 0.9rem rgba(15, 29, 64, 0.03);
+}
+
+.right-analytics-col {
+  min-width: 19.75rem;
+}
+
+.panel-title {
+  color: #0f1d40;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.panel-subtitle {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.count-chip {
+  background-color: #eaf0ff;
+  color: #1d4ed8;
+  border-radius: 99rem;
+  padding: 0.4em 1em;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CATEGORY CHART
+   ========================================================= */
+
+.bar {
+  background-color: #cfdcff;
+  border-radius: 0.9rem;
+  min-width: 2.6rem;
+}
+
+.bar-top {
+  background-color: #2457f5;
+}
+
+.bar-count {
+  color: #0f1d40;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.bar-label {
+  font-size: 1.35rem;
+}
+
+/* =========================================================
+   RECOVERY GAUGE
+   ========================================================= */
+
+.gauge-percent {
+  color: #0f1d40;
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.gauge-caption {
+  color: #64748b;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.dot-claimed {
+  color: #14a37f;
+  font-size: 0.95rem;
+}
+
+.dot-found {
+  color: #12a8d6;
+  font-size: 0.95rem;
+}
+
+.dot-lost {
+  color: #f0544f;
+  font-size: 0.95rem;
+}
+
+.legend-text {
+  color: #475569;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FORM CONTROLS
+   ========================================================= */
+
+.field-label {
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+entry,
+dropdown.field-control > button {
+  background-color: #f8fafc;
+  color: #0f1d40;
+  border: 0.08rem solid #cbd5e1;
+  border-radius: 0.8rem;
+  padding: 0.65em 0.95em;
+  min-height: 1.8rem;
+  font-size: 1.02rem;
+  box-shadow: none;
+}
+
+entry:focus-within,
+dropdown.field-control > button:focus {
+  background-color: #ffffff;
+  border-color: #2457f5;
+}
+
+entry placeholder {
+  color: #94a3b8;
+}
+
+entry.search-field {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0.45em 0.5em;
+  font-size: 1.05rem;
+}
+
+entry.search-field:focus-within {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* =========================================================
+   BUTTON SYSTEM - CONSISTENT BLUE THEME
+   ========================================================= */
+
+/* Main action buttons */
+
+.primary-button,
+button.primary-button {
+  background-color: #2457f5;
+  background-image: none;
+  color: #ffffff;
+  border: 0.08rem solid #2457f5;
+  border-radius: 0.9rem;
+  padding: 0.75em 1.4em;
+  font-size: 1.02rem;
+  font-weight: 800;
+  box-shadow: 0 0.25rem 0.7rem rgba(36, 87, 245, 0.24);
+}
+
+.primary-button label,
+button.primary-button label {
+  color: #ffffff;
+}
+
+.primary-button:hover,
+button.primary-button:hover {
+  background-color: #1948db;
+  background-image: none;
+  border-color: #1948db;
+  color: #ffffff;
+}
+
+.primary-button:hover label,
+button.primary-button:hover label {
+  color: #ffffff;
+}
+
+.primary-button:active,
+button.primary-button:active {
+  background-color: #1539b5;
+  background-image: none;
+  border-color: #1539b5;
+  color: #ffffff;
+}
+
+/* Sidebar report button */
+
+.promo-button,
+button.promo-button {
+  background-color: #426ff3;
+  background-image: none;
+  color: #ffffff;
+  border: 0.08rem solid #6689fa;
+  border-radius: 0.75rem;
+  padding: 0.7em 1em;
+  font-size: 0.98rem;
+  font-weight: 800;
+  box-shadow: none;
+}
+
+.promo-button label,
+button.promo-button label {
+  color: #ffffff;
+}
+
+.promo-button:hover,
+button.promo-button:hover {
+  background-color: #2457f5;
+  background-image: none;
+  border-color: #91aaff;
+  color: #ffffff;
+}
+
+.promo-button:active,
+button.promo-button:active {
+  background-color: #1948db;
+  background-image: none;
+  color: #ffffff;
+}
+
+/* Secondary buttons */
+
+.ghost-button {
+  background-color: #ffffff;
+  background-image: none;
+  color: #2457f5;
+  border: 0.08rem solid #c9d6f7;
+  border-radius: 0.9rem;
+  padding: 0.75em 1.4em;
+  font-size: 1.02rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.ghost-button:hover {
+  background-color: #eaf0ff;
+  background-image: none;
+  border-color: #9bb3fa;
+  color: #1948db;
+}
+
+/* Claim button */
+
+.claim-button {
+  background-color: #edf2ff;
+  background-image: none;
+  color: #2457f5;
+  border: 0.08rem solid #c9d6f7;
+  border-radius: 0.65rem;
+  padding: 0.4em 0.85em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.claim-button:hover {
+  background-color: #dce7ff;
+  background-image: none;
+  border-color: #9bb3fa;
+  color: #1948db;
+}
+
+/* Delete button retains a warning colour */
+
+.delete-button {
+  background-color: #ffffff;
+  background-image: none;
+  color: #c63a37;
+  border: 0.08rem solid #f6cbca;
+  border-radius: 0.65rem;
+  padding: 0.4em 0.75em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.delete-button:hover {
+  background-color: #fdeaea;
+  background-image: none;
+  border-color: #e9a5a3;
+  color: #a92e2b;
+}
+
+/* =========================================================
+   REPORT CARDS
+   ========================================================= */
+
+list.item-list {
+  background-color: transparent;
+}
+
+list.item-list > row {
+  background-color: transparent;
+  padding: 0 0 0.65rem 0;
+  border: none;
+  box-shadow: none;
+}
+
+list.item-list > row:hover {
+  background-color: transparent;
+}
+
+.item-card {
+  background-color: #ffffff;
+  border: 0.08rem solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.95rem 1.25rem;
+  transition: border-color 150ms ease;
+}
+
+.item-card:hover {
+  border-color: #9bb3fa;
+  background-color: #fcfdff;
+}
+
+.item-icon-box {
+  background-color: #eaf0ff;
+  border-radius: 0.85rem;
+  min-width: 3.4rem;
+  min-height: 3.4rem;
+}
+
+.item-card-lost .item-icon-box {
+  background-color: #fdeaea;
+}
+
+.item-card-found .item-icon-box {
+  background-color: #dff4fb;
+}
+
+.item-card-claimed .item-icon-box {
+  background-color: #ddf5ee;
+}
+
+.item-icon-glyph {
+  font-size: 1.55rem;
+}
+
+.id-chip {
+  color: #64748b;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.item-name {
+  color: #0f1d40;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.category-chip {
+  background-color: #eaf0ff;
+  color: #1d4ed8;
+  border-radius: 0.55rem;
+  padding: 0.2em 0.75em;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.item-location {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Status badges */
+
+.status-badge {
+  border-radius: 0.55rem;
+  padding: 0.3em 0.85em;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.lost-badge {
+  background-color: #fdeaea;
+  color: #c63a37;
+}
+
+.found-badge {
+  background-color: #dff4fb;
+  color: #0b7fa3;
+}
+
+.claimed-badge {
+  background-color: #ddf5ee;
+  color: #0f7f63;
+}
+
+/* =========================================================
+   EMPTY STATE AND DIALOGS
+   ========================================================= */
+
+.empty-state-box {
+  background-color: #f8fafc;
+  border: 0.12rem dashed #cbd5e1;
+  border-radius: 1.1rem;
+  padding: 2.5rem 2rem;
+}
+
+.empty-icon {
+  font-size: 2.4rem;
+}
+
+.empty-title {
+  color: #0f1d40;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.empty-subtitle {
+  color: #64748b;
+  font-size: 0.98rem;
+}
+
+.dialog-box {
+  background-color: #ffffff;
+  padding: 1.8rem;
+}
+
+.dialog-title {
+  color: #0f1d40;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.dialog-text {
+  color: #475569;
+  font-size: 1.02rem;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+scrollbar slider {
+  background-color: #cbd5e1;
+  border-radius: 99rem;
+  min-width: 0.45rem;
+  min-height: 2.2rem;
+}
+
+scrollbar slider:hover {
+  background-color: #94a3b8;
+}
